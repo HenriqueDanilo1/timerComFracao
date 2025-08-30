@@ -1,0 +1,125 @@
+/* general */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+/* display */
+#display {
+  display: flex;
+  flex-direction: row;
+  height: 66dvh;
+  width: 100dvw;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#display p {
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 25px;
+}
+
+/* fraction */
+#fracTime {
+  display: flex;
+  height: 66dvh;
+  width: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#fracTime input[type="number"] {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  height: 75px;
+  font-size: 75px;
+  color: white;
+  width: 300px;
+  text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.line {
+  width: 300px;
+  border: 1px solid white;
+}
+
+/* input */
+#iaiDiv {
+  display: inline;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: white;
+}
+#iaiDiv input {
+  margin-right: 10px;
+}
+
+/* timer */
+#timerTime {
+  display: flex;
+  /* width: 100vw; */
+  height: 66vh;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 85px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* controls */
+.controls {
+  display: flex;
+  width: 100vw;
+  height: 34vh;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.option {
+  display: flex;
+  height: 50px;
+  width: 150px;
+  border: 2px solid white;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+.option:hover {
+  background-color: white;
+  color: black;
+  font-weight: 900;
+  border: 2px solid black;
+  box-shadow: 2px 2px 0 white, -2px -2px 0 white, -2px 2px 0 white,
+    2px -2px 0 white;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div id="display">
+        <div id="fracTime">
+          <input type="number" id="a" value="1" />
+          <div class="line"></div>
+          <input type="number" id="b" value="1" />
+        </div>
+        <div id="timerTime"></div>
+        <p>de minuto</p>
+      </div>
+      <div id="iaiDiv">
+        <input type="checkbox" id="iai" /><label for="iai"
+          >Eu sou um animal que nao compreende fração (arredondar ms)</label
+        >
+      </div>
+      <div class="controls">
+        <div id="reset" class="option" onclick="reset()">Zerar</div>
+        <div id="pause" class="option" onclick="pause()">Pausar</div>
+        <div id="resume" class="option" onclick="start()">Continuar</div>
+        <div id="start" class="option" onclick="start()">Iniciar</div>
+      </div>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
