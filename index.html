@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Timer</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/icon.svg" type="image/x-icon" />
   </head>
   <body>
     <main>
@@ -15,7 +16,7 @@
           <input type="number" id="b" value="1" />
         </div>
         <div id="timerTime"></div>
-        <p>de minuto</p>
+        <p id="string">de minuto</p>
       </div>
       <div id="iaiDiv">
         <input type="checkbox" id="iai" /><label for="iai"
@@ -24,12 +25,13 @@
       </div>
       <div class="controls">
         <div id="reset" class="option" onclick="reset()">Zerar</div>
+        <div id="restart" class="option" onclick="restart()">Reiniciar</div>
         <div id="pause" class="option" onclick="pause()">Pausar</div>
-        <div id="resume" class="option" onclick="start()">Continuar</div>
+        <div id="resume" class="option" onclick="start(1)">Continuar</div>
         <div id="start" class="option" onclick="start()">Iniciar</div>
       </div>
     </main>
-
+    <img id="nihaonigga" src="images/nihaonigga.jpg" />
     <script src="main.js"></script>
   </body>
 </html>

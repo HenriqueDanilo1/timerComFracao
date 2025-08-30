@@ -6,6 +6,8 @@ const $start = document.querySelector("#start");
 const $reset = document.querySelector("#reset");
 const $pause = document.querySelector("#pause");
 const $resume = document.querySelector("#resume");
+const $restart = document.querySelector("#restart");
+const $string = document.querySelector("#string");
 const $iai = document.querySelector("#iai");
 const $a = document.querySelector("#a");
 const $b = document.querySelector("#b");
@@ -14,6 +16,8 @@ const $b = document.querySelector("#b");
 $timer.style.display = "none";
 $pause.style.display = "none";
 $resume.style.display = "none";
+$restart.style.display = "none";
+$timer.style.animation = "none";
 
 //convert functions
 function frac2ms(a, b) {
@@ -56,24 +60,45 @@ function simplifier(a, b) {
 //timer functions
 let ms;
 let counting;
+let startA;
+let startB;
 
-function start() {
+function start(isContinue) {
+  if ($a.value == 5 && $b.value == 0.5) {
+    new Audio("audio/monday.m4a").play();
+    document.querySelector("#nihaonigga").style.animation = "growUp 10s linear";
+    document.querySelector("#nihaonigga").style.height = "700px";
+    setTimeout(() => {
+      document.querySelector("#nihaonigga").style.animation = "";
+      document.querySelector("#nihaonigga").style.height = "0";
+    }, 15000);
+    return;
+  }
   const a = Number($a.value);
   const b = Number($b.value);
-  if (a == 0 || b == 0) {
+  if (!isContinue) {
+    startA = a;
+    startB = b;
+  }
+  if (a < 0 || b <= 0) {
     return alert("animal");
   }
   ms = frac2ms(a, b);
   $frac.style.display = "none";
+  $string.style.display = "none";
   $timer.style.display = "";
   counting = setInterval(() => {
     if (ms >= 0) {
       ms2time(ms);
       ms--;
     } else {
-      return clearInterval(counting);
+      clearInterval(counting);
+      $timer.style.animation = "";
+      $pause.style.display = "none";
+      $restart.style.display = "";
     }
   }, 10);
+  $timer.style.animation = "none";
   $start.style.display = "none";
   $resume.style.display = "none";
   $pause.style.display = "";
@@ -94,14 +119,39 @@ function pause() {
   $a.value = a;
   $b.value = b;
   $frac.style.display = "";
+  $string.style.display = "";
 }
-
 function reset() {
   clearInterval(counting);
   $pause.style.display = "none";
+  $resume.style.display = "none";
+  $timer.style.display = "none";
+  $restart.style.display = "none";
   $start.style.display = "";
   $frac.style.display = "";
-  $timer.style.display = "none";
+  $string.style.display = "";
   $a.value = 1;
   $b.value = 1;
+}
+function restart() {
+  $restart.style.display = "none";
+  ms = frac2ms(startA, startB);
+  $frac.style.display = "none";
+  $string.style.display = "none";
+  $timer.style.display = "";
+  counting = setInterval(() => {
+    if (ms >= 0) {
+      ms2time(ms);
+      ms--;
+    } else {
+      clearInterval(counting);
+      $timer.style.animation = "";
+      $pause.style.display = "none";
+      $restart.style.display = "";
+    }
+  }, 10);
+  $timer.style.animation = "none";
+  $start.style.display = "none";
+  $resume.style.display = "none";
+  $pause.style.display = "";
 }

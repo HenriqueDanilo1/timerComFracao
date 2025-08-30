@@ -1,3 +1,25 @@
+/* animation */
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes growUp {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 700px;
+  }
+}
+
 /* general */
 * {
   padding: 0;
@@ -90,6 +112,7 @@ input[type="number"]::-webkit-outer-spin-button {
   font-size: 85px;
   justify-content: center;
   align-items: center;
+  animation: blink infinite 1.3s 0.3s steps(1);
 }
 
 /* controls */
@@ -122,4 +145,12 @@ input[type="number"]::-webkit-outer-spin-button {
   border: 2px solid black;
   box-shadow: 2px 2px 0 white, -2px -2px 0 white, -2px 2px 0 white,
     2px -2px 0 white;
+}
+
+#nihaonigga {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 0;
+  transform: translate(-50%, -50%);
 }
