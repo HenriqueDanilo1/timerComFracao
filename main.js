@@ -64,7 +64,7 @@ let startA;
 let startB;
 
 function start(isContinue) {
-  if ($a.value == 22 && $b.value == 13) {
+  if ($a.value == 0 && $b.value == 0) {
     new Audio("audio/monday.m4a").play();
     document.querySelector("#nihaonigga").style.animation = "growUp 10s linear";
     document.querySelector("#nihaonigga").style.height = "700px";
